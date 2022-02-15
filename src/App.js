@@ -13,12 +13,10 @@ function App() {
   const [data, setData] = useState([]);
 
   const sortByField = (field) => {
-    console.log(sortDirections);
     const direction = sortDirections[field] === 1 ? "desc" : "asce";
 
     setData((state) => [
       ...state.sort((a, b) => {
-        console.log(direction);
         if (a[field] > b[field]) {
           return direction === "desc" ? -1 : 1;
         }
